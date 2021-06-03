@@ -14,28 +14,28 @@
   <body>
     <div class="navigation">
       <ul>
-        <li class="list active">
+        <li class="list active" data-color="#f53b57">
           <a href="#">
             <span class="icon"><i class="fas fa-home fa-2x"></i></span>
             <span class="title">Home</span>
           </a>
         </li>
 
-        <li class="list">
+        <li class="list" data-color="#3c40c6">
           <a href="#">
             <span class="icon"><i class="fas fa-user fa-2x"></i></span>
             <span class="title">Profile</span>
           </a>
         </li>
 
-        <li class="list">
+        <li class="list" data-color="#05c46b">
           <a href="#">
             <span class="icon"><i class="fas fa-comments fa-2x"></i></span>
             <span class="title">Message</span>
           </a>
         </li>
 
-        <li class="list">
+        <li class="list" data-color="#0fbcf9">
           <a href="#">
             <span class="icon"
               ><i class="fas fa-question-circle fa-2x"></i
@@ -44,7 +44,7 @@
           </a>
         </li>
 
-        <li class="list">
+        <li class="list" data-color="#ffa801">
           <a href="#">
             <span class="icon"><i class="fas fa-cog fa-2x"></i></span>
             <span class="title">Settings</span>
@@ -66,6 +66,14 @@
           list[i].className = 'list active';
         };
       }
+
+      list.forEach((elements) => {
+        elements.addEventListener('mouseenter', function (e) {
+          let bg = document.querySelector('body');
+          let color = event.target.getAttribute('data-color');
+          bg.style.backgroundColor = color;
+        });
+      });
     </script>
   </body>
 </html>
